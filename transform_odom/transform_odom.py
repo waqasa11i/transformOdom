@@ -130,8 +130,8 @@ class OdomTransformer(Node):
 
         transform = TransformStamped()
         transform.header.stamp = self.get_clock().now().to_msg()
-        transform.header.frame_id = self.world_frame
-        transform.child_frame_id = self.odom_frame
+        transform.header.frame_id = 'odom'
+        transform.child_frame_id = 'base_link'
         
         transform.transform.translation.x = odom_msg.pose.pose.position.x
         transform.transform.translation.y = odom_msg.pose.pose.position.y
