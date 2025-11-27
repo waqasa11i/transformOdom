@@ -52,7 +52,7 @@ class OdomTransformer(Node):
             self.initial_odom_received = True
             self.get_logger().info('Initial pose received')
             
-            self.publish_initial_transform(msg)
+            #self.publish_initial_transform(msg)
             
     def kiss_odom_callback(self, msg):
         """
@@ -68,7 +68,7 @@ class OdomTransformer(Node):
         
         self.transformed_odom_pub.publish(transformed_odom)
         
-        self.publish_odom_tf(transformed_odom)
+        #self.publish_odom_tf(transformed_odom)
         
     def transform_kiss_odometry(self, kiss_odom):
 
